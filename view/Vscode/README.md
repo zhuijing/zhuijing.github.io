@@ -1,0 +1,5 @@
+## [Vs Code 扩展](https://code.visualstudio.com/api)
+- [Extension Manifest Reference扩展清单参考](https://code.visualstudio.com/api/references/extension-manifest)
+- [Debugging](https://code.visualstudio.com/docs/editor/debugging)
+- [vscode-extension-samples 扩展模板](https://github.com/microsoft/vscode-extension-samples)
+- [扩展搜索](https://marketplace.visualstudio.com/vscode)

@@ -1,0 +1,30 @@
+{
+  "name": "zhuijing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vuepress dev",
+    "build": "vuepress build --dest docs",
+    "push": "node publish.js"
+  },
+  "keywords": [
+    "曹泽鹏",
+    "vue",
+    "react",
+    "node",
+    "git",
+    "linux",
+    "chrome"
+  ],
+  "author": "曹泽鹏",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "^1.9.10"
+  },
+  "dependencies": {
+    "@vuepress/plugin-active-header-links": "^1.9.10",
+    "@vuepress/plugin-back-to-top": "^1.9.10",
+    "glob": "^10.3.10"
+  }
+}

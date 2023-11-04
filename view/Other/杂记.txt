@@ -1,0 +1,61 @@
+左侧部分-请求发送之前所有要准备的工作所消耗的时间
+
+浅蓝色部分-是请求发送和等待 (TTFB)
+
+深蓝色部分是 Content Download
+
+右侧一行本质上是等待主线程所花费的时间
+
+
+
+DOMContentLoaded
+DOMContentLoaded 表示 HTML 已经完全被加载和解析，当然样式表、图片等资源还不一定已经完成加载。从下图中可以看到，经过多段 HTML 解析后，DCL 之后就没有其他的 Parse HTML 了。
+
+
+
+first paint：指的是首个像素开始绘制到屏幕上的时机，例如一个页面的背景色
+first contentful paint：指的是开始绘制内容的时机，如文字或图片
+
+
+
+https://mp.weixin.qq.com/s/iodsGPWgYc97yWLb09Xk6A
+
+
+
+
+CSS 加载完成
+Parse Stylesheet：解析样式表，构建出 CSSOM
+Recalculate Style：重新计算样式，确定样式规则
+Layout：根据计算结果进行布局，确定元素的大小和位置
+Update Layer Tree：更新渲染层树
+Paint：根据 Layer Tree 绘制页面（位置、大小、颜色、边框、阴影等）
+Composite Layers：组合层，浏览器将图层合并后输出到屏幕
+
+
+
+
+css并不会阻塞DOM树的解析
+
+css加载会阻塞DOM树渲染
+
+css加载会阻塞后面的js语句的执行
+
+css的下载不会阻塞后面js的下载，但是js下载完成后，被阻塞执行
+
+
+2.加载或者执行js时会阻塞对标签的解析，也就是阻塞了dom树的形成，只有等到js执行完毕，浏览器才会继续解析标签。没有dom树，浏览器就无法渲染，所以当加载很大的js文件时，可以看到页面很长时间是一片空白
+
+之所以会阻塞对标签的解析是因为加载的js中可能会创建，删除节点等，这些操作会对dom树产生影响，如果不阻塞，等浏览器解析完标签生成dom树后，js修改了某些节点，那么浏览器又得重新解析，然后生成dom树，性能比较差
+
+
+
+
+浏览器下载 HTML 并解析，如果遇到外部 CSS 等资源，就会由 Browser 进程中的 network 线程下载
+
+当 CSS 下载时，HTML 的解析过程可以继续
+
+当解析遇到了外部 Script 标签（不包含 async、defer 属性）时，解析停止，直到脚本下载并执行完成
+
+
+
+总的来说，浏览器对 HTML 的解析过程不会被 CSS、IMG 等资源的下载阻塞，但脚本的加载和执行会终止 HTML 的解析。这主要是因为 JS 可能会改变 DOM 的结构，或者是 JS 动态加载其他 JS 再改变 DOM 等潜在问题。

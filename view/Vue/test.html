@@ -1,0 +1,69 @@
+<body>
+    <ul>
+      <li><a href="#/home">home</a></li>
+      <li><a href="#/about">about</a></li>
+    </ul>
+    <div id="routeView"></div>
+    <script>
+      window.addEventListener('DOMContentLoaded', onLoad)
+      window.addEventListener('hashchange', onHashChange)
+      var routeView = null
+      function onLoad() {
+        routeView = document.querySelector('#routeView')
+        onHashChange()
+      }
+      function onHashChange() {
+        const hash = window.location.hash
+        switch(hash) {
+          case '#/home':
+            routeView.innerHTML = 'home';
+            break;
+          case '#/about':
+            routeView.innerHTML = 'about';
+            break;
+            default:
+            routeView.innerHTML = '默认';
+        }
+      }
+    </script>
+  </body>
+  
+  <body>
+    <ul>
+      <li><a href="/home">home</a></li>
+      <li><a href="/about">about</a></li>
+    </ul>
+    <div id="routeView"></div>
+    <script>
+      var routeView = null
+      window.addEventListener('DOMContentLoaded', onload)
+      window.addEventListener('popstate', onPopState)
+      function onload(){
+        routeView = document.querySelector('#routeView')
+        onPopState()
+        var links = document.querySelectorAll('a[href]')
+        links.forEach(el => {
+          el.addEventListener('click', function(e) {
+            e.preventDefault()
+            console.log("el.getAttribute('href')", el.getAttribute('href'))
+            history.pushState(null, '', el.getAttribute('href'))
+            onPopState()
+          })
+        })
+      }
+      function onPopState() {
+          console.log('onPopState :>> ', location);
+        switch(location.pathname) {
+          case '/home':
+          routeView.innerHTML = 'home'
+          break;
+          case '/about':
+          routeView.innerHTML = 'about'
+          break;
+          default:
+          routeView.innerHTML = '默认'
+        }
+      }
+    </script>
+  </body>
+  

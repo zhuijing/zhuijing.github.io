@@ -1,0 +1,23 @@
+# Vue读书笔记目录
+1. [vue3 快速掌握Vue3](/view/vue3.0/1/)
+2. [vue3 快速掌握vite](/view/vue3.0/2/)
+3. [Vue Function-based API RFC](/view/vue3.0/3/)
+4. [vuex4.0-typescript](https://dev.to/3vilarthas/vuex-typescript-m4j)
+5. [使用TS编写Vuex](https://www.zhihu.com/zvideo/1408101987108466688)
+6. [是否真需要vuex](https://dev.to/rikbrowning/do-you-need-vuex-k2n)
+7. [Vue 3 迁移指南](https://v3-migration.vuejs.org/)
+8. [VUE3重大变化](https://v3-migration.vuejs.org/breaking-changes/)
+9. [Vue3.0文档](https://staging-cn.vuejs.org/guide/introduction.html)
+10. [组合式 API FAQ](https://staging-cn.vuejs.org/guide/extras/composition-api-faq.html)
+11. [vueuse Vue Composition Utilities][https://vueuse.org/core/onLongPress/#usage]
+12. [pinia vue状态管理](https://pinia.vuejs.org/)
+13. [Vue CLI -> Vite 迁移指南](https://vueschool.io/articles/vuejs-tutorials/how-to-migrate-from-vue-cli-to-vite/)
+14. [awesome-vite](https://github.com/vitejs/awesome-vite#vue-cli)
+15. [git vite](https://github.com/vitejs/vite)
+16. [浅谈VueUse设计与实现](https://zhuanlan.zhihu.com/p/480313279)
+17. [vueuse](https://github.com/vueuse/vueuse)
+18. [vitesse](https://github.com/antfu/vitesse) - 官方模版，可以学习相关生态
+19. [Vue 生态进展与展望 及其他相关视频](https://github.com/Leecason/vue-team-talks)
+- [响应式](/view/Vue3.0/5.md)
+- [vuejs设计与实现](/view/Vue3.0/6.md)
+- [Vue3.0最佳实践](/view/Vue3.0/7.md)

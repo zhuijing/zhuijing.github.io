@@ -1,0 +1,35 @@
+<div class="wrap">
+    <div class="left-main">left</div>
+    <div class="right-main">right</div>
+</div>
+<div class="content">
+    <p>sdfsdf</p>
+    <ul>
+        <li>10</li>
+        <li>10</li>
+        <li>10</li>
+        <li>10</li>
+        <li>10</li>
+    </ul>
+</div>
+<style>
+    .wrap {
+        display: inline-block;
+        background: blue;
+    }
+    .left-main{
+        width: 180px;
+        float: left;
+        height: 100px;
+        background: red;
+        margin-top: 10px;
+        margin-right: 10px;
+        resize: both;
+        overflow: hidden; /* required by resize:both */
+    }
+    .right-main{
+        background: green;
+        overflow: hidden;
+
+    }
+</style>

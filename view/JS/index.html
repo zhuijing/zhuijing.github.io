@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" maxlength="10" id="input">
+    <button onclick="delete1()">错误删除</button>
+    <button onclick="delete2()">正确删除</button>
+    <button onclick="delete3()">数组删除</button>
+
+
+    <button onclick="logLen()">计算长度</button>
+
+    <script>
+        function delete1() {
+            document.querySelector('#input').value = document.querySelector('#input').value.slice(0,-1)
+        }
+        function delete2() {
+            const last = document.querySelector('#input').value.slice(-1)
+            const last2 = document.querySelector('#input').value.slice(-2)
+            let delLen = 1
+            if(last.codePointAt() < 0xffff && last2.codePointAt() > 0xffff) {
+                delLen = 2
+            }
+
+            document.querySelector('#input').value = document.querySelector('#input').value.slice(0,-1 * delLen)
+        }
+        function delete3() {
+            const value  = [...document.querySelector('#input').value];
+            value.pop();
+            document.querySelector('#input').value = value.join('')
+
+        }
+        function logLen( ){
+            console.log('长度', document.querySelector('#input').value.length)
+        }
+
+        // console.log('二进制表示',0b000001) // 1
+        // console.log('8进制表示',010) 。 // 8
+        // console.log('10进制表示',10) 。// 10
+        // console.log('16进制表示',0x10) 。// 16
+
+
+    </script>
+</body>
+</html>

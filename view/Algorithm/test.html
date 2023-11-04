@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var point = [
+      [0,0,1,0],
+      [0,0,0,0],
+      [0,0,1,0],
+      [0,1,0,0],
+      [0,0,0,1]
+    ]; // 存储地图
+    var book = []; // 记录走了哪些点,防止重复走
+    var min = 99999
+    var head = 0
+    var tail = 0
+    var queue = []
+    var next = [[0,1],[1,0],[0,-1],[-1,0]]
+    var x,y,f,s // 横坐标，纵坐标，父亲在队列的编号，步数
+    var i,j,k,n = 5,m = 4,startx = 0,starty = 0,p = 4,q = 3,tx,ty,flag
+
+    function mian() {
+      queue[tail] = {}
+      queue[tail].x = startx
+      queue[tail].y = starty
+      queue[tail].f = 0
+      queue[tail].s = 0
+      tail ++ ;
+      book[startx] = []
+      book[startx][starty] = 1
+      flag = 0 // 0 表示未到达
+
+      // 队列不为空
+      while(head < tail) {
+        // 四个方向各走一次
+        for(var k = 0; k < 4; k++) {
+          // 计算下个点的坐标
+
+          tx = queue[head].x + next[k][0]
+          ty = queue[head].y + next[k][1]
+          // 判断越界
+
+          if(tx < 0 || tx > n - 1 || ty < 0 || ty > m - 1) {
+            continue;
+          }
+          // 判断是否是障碍，或者已经走过了
+
+          if(point[tx][ty] == 0 && (book[tx] = []) &&!book[tx][ty]) {
+            // 把这个点标记为走了
+            book[tx][ty] = 1
+            // 插入新的点到队列
+            queue[tail] = {}
+            queue[tail].x = tx
+            queue[tail].y = ty
+            queue[tail].f = head
+            queue[tail].s = queue[head].s + 1
+            tail ++ 
+          }
+          // 如果到了目标
+          if(tx == p && ty == q) {
+            flag = 1
+            break
+          }
+        }
+
+        if(flag == 1) {
+          break
+        }
+        head ++
+      }
+    }
+    
+
+    ;
+  </script>
+</body>
+</html>
