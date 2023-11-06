@@ -1,3 +1,6 @@
+## 2023-11-06
+### 📝 [React 设计模式读书笔记](/view/React/1.md)
+### 📝 [Hook](/view/React/2.md)
 ## 2023-11-04
 ### 📝 [JS红皮书笔记](/view/JS/28.md)
 ### 📝 [声明合并(Declaration Merging)](/view/TS/20.md)
